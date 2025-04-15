@@ -1,3 +1,5 @@
+***After forking and cloning this repository, run 'make' in the terminal. This will synchronize your package library and build the report.***
+
 `code/Input.R`
 - Imports data set, specifying column/variable types
 - Mutates data set to create version that changes all '0' algal colony counts to NA
@@ -32,4 +34,3 @@
 - Loads cleaned data and configuration parameters
 - Loads and displays map, tables, and regressions
 
-To build report, download all folders. Running make in terminal should build report
