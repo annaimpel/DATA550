@@ -1,11 +1,11 @@
 .PHONY: all install clean
 
-all: install habs_report.html
+all: install Report.html
 
 install:
 	Rscript -e "if (!requireNamespace('renv', quietly = TRUE)) install.packages('renv'); renv::restore()"
 
-habs_report.html: output/clean_habs_data.rds output/map.rds output/summary_table.rds output/plots.rds output/regressions.rds
+Report.html: output/clean_habs_data.rds output/map.rds output/summary_table.rds output/plots.rds output/regressions.rds
 	Rscript code/Build.R
 
 output/clean_habs_data.rds: code/Input.R
@@ -26,3 +26,12 @@ output/regressions.rds: code/Regression.R
 clean:
 	rm -rf output/*.rds output/*.html
 
+docker_build:
+	docker build --platform linux/amd64 --no-cache -t annaimpel/final_image:latest .
+
+docker_run:
+	docker run --rm \
+		-v $$(pwd)/output:/final_project/output \
+		--platform linux/amd64 \
+		annaimpel/final_image:latest \
+		Rscript code/Build.R
