@@ -11,6 +11,5 @@ RUN apt-get update && apt-get install -y \
     libgeos-dev \
     libudunits2-dev
     
-RUN Rscript -e "install.packages('maptiles')"
 RUN Rscript -e "install.packages('renv')"
 RUN Rscript -e "renv::restore()"
