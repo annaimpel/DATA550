@@ -6,7 +6,7 @@ This project processes and visualizes data on algal colony counts and their rela
 
 1. Clone the repository: After forking and cloning this repository, navigate to the project folder in your terminal.
 2. Run `make clean` in terminal to ensure any populated outputs are reset.
-3. Run make to synchronize your package library, build the report, and generate final output. 
+3. Run `make` to synchronize your package library, build the report, and generate final output. 
 4. output/ folder will become populated with .rds files and final Report.html.
 
 ## Docker Instructions:
