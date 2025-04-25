@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     libgdal-dev \
     libproj-dev \
     libgeos-dev \
-    libudunits2-dev
+    libudunits2-dev \
+    libnode-dev
     
 RUN Rscript -e "install.packages('renv')"
 RUN Rscript -e "renv::restore()"

@@ -14,6 +14,17 @@ here::i_am(
 )
 
 library(yaml)
+library(broom.helpers)
+library(here)
+library(rmarkdown)
+library(knitr)
+library(ggplot2)
+library(tmap)
+library(maptiles)
+library(dplyr)
+library(gtsummary)
+library(labelled)
+
 config <- yaml::read_yaml("habs_config.yaml") 
 knitr::opts_chunk$set(echo = config$show_code)  # Set echo based on config
 ```
@@ -33,6 +44,7 @@ A map of the sample sites around LSL is displayed below.
 
 library(ggplot2)
 library(tmap)
+library(maptiles)
 
 site_map <- readRDS(here::here("output", "map.rds"))
 

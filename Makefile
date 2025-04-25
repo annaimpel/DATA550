@@ -32,6 +32,7 @@ docker_build:
 docker_run:
 	docker run --rm \
 		-v $$(pwd)/output:/final_project/output \
+		-v $$(pwd)/report:/final_project/report \
 		--platform linux/amd64 \
 		annaimpel/final_image:latest \
-		Rscript code/Build.R
+		sh -c "make all && cp /final_project/output/Report.html /final_project/report/Report.html"
